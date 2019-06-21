@@ -76,6 +76,15 @@ module.exports = {
           }
         ]
       },
+      // pug loader
+      {
+        test:/\.pug$/,
+        use:[
+          {
+            loader:'pug-loader'
+          }
+        ]
+      },
       // image loader
       {
         test:/\.(jpg|git|png)/,
@@ -95,7 +104,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       // template:'./src/index.html'
-      template:'./src/index.ejs',
+      // template:'./src/index.ejs',
+      template:'./src/index.pug',
       title:"米斯特吴",
     })
   ]
