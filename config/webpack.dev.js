@@ -29,7 +29,8 @@ module.exports = {
     overlay: true, // 在页面上打印报错
     hot: true,
   },
-  // 
+  // 本地服务器调试工具
+  devtool: 'source-map',
   module: {
     rules: [
       // js loaders
