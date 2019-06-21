@@ -83,8 +83,8 @@ module.exports = {
           {
             loader:'file-loader',
             options:{
-              // name:'images/[name]-[hash:8].[ext]',
-              name:'images/[name].[ext]',
+              name:'images/[name]-[hash:8].[ext]',
+              // name:'images/[name].[ext]',
             }
           }
         ]
@@ -94,7 +94,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
-      template:'./src/index.html'
+      // template:'./src/index.html'
+      template:'./src/index.ejs',
+      title:"米斯特吴",
     })
   ]
 }
