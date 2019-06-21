@@ -1,4 +1,5 @@
 const path = require('path')
+import webpack from 'webpack'
 module.exports = {
   // 入口：有并且可以有多个
   entry: {
@@ -25,6 +26,7 @@ module.exports = {
   devServer: {
     contentBase: 'dist', // 不加此项，'/'路径默认展示文件路径目录。
     overlay: true, // 在页面上打印报错
+    hot: true,
   },
   // 
   module: {
@@ -87,4 +89,7 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
