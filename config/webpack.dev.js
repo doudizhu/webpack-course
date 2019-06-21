@@ -55,6 +55,21 @@ module.exports = {
           },
         ],
       },
+      // sass loaders
+      {
+        test:/\.sass$/,
+        use:[
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
       // html loaders
       {
         test:/\.html$/,
