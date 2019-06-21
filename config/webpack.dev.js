@@ -22,6 +22,7 @@ module.exports = {
   // 
   module: {
     rules: [
+      // css loaders
       {
         test:/\.css$/,
         use:[
@@ -32,6 +33,40 @@ module.exports = {
             loader: 'css-loader',
           },
         ],
+      },
+      // html loaders
+      {
+        test:/\.html$/,
+        use:[
+          {
+            loader:'file-loader',
+            options:{
+              name: '[name].html', // 3.重新起名
+            }
+          },
+          {
+            loader: 'extract-loader', // 2.从bundle.js中分离资源
+          },
+          {
+            loader:'html-loader', // 1.找到html文件
+            options:{
+              attr:['img:stc']
+            }
+          }
+        ]
+      },
+      // image loader
+      {
+        test:/\.(jpg|git|png)/,
+        use:[
+          {
+            loader:'file-loader',
+            options:{
+              // name:'images/[name]-[hash:8].[ext]',
+              name:'images/[name].[ext]',
+            }
+          }
+        ]
       }
     ],
   },
