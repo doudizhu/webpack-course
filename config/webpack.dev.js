@@ -1,5 +1,6 @@
 const path = require('path')
 import webpack from 'webpack'
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   // 入口：有并且可以有多个
   entry: {
@@ -57,15 +58,15 @@ module.exports = {
       {
         test:/\.html$/,
         use:[
-          {
-            loader:'file-loader',
-            options:{
-              name: '[name].html', // 3.重新起名
-            }
-          },
-          {
-            loader: 'extract-loader', // 2.从bundle.js中分离资源
-          },
+          // {
+          //   loader:'file-loader',
+          //   options:{
+          //     name: '[name].html', // 3.重新起名
+          //   }
+          // },
+          // {
+          //   loader: 'extract-loader', // 2.从bundle.js中分离资源
+          // },
           {
             loader:'html-loader', // 1.找到html文件
             options:{
@@ -90,6 +91,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HTMLWebpackPlugin({
+      template:'./src/index.html'
+    })
   ]
 }

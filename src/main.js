@@ -1,7 +1,7 @@
 // alert('Hello World!')
 
 require('@babel/runtime/regenerator')
-require('webpack-hot-middleware/client')
+require('webpack-hot-middleware/client?reload=true')
 require('./main.css')
 require('./index.html')
 
@@ -12,3 +12,6 @@ require('./index.html')
 // }
 
 // a({a:1,b:2})
+
+
+console.log('Hello World!')
