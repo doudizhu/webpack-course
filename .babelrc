@@ -10,7 +10,8 @@
         },
         "debug": true
       }
-    ]
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
     "@babel/plugin-transform-runtime" // 解决promise对打包之后的环境变量的污染
