@@ -16,6 +16,23 @@ module.exports = {
   },
   // 本地服务器
   devServer: {
-    contentBase: 'dist',
-  }
+    contentBase: 'dist', // 不加此项，'/'路径默认展示文件路径目录。
+    overlay: true, // 在页面上打印报错
+  },
+  // 
+  module: {
+    rules: [
+      {
+        test:/\.css$/,
+        use:[
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
+      }
+    ],
+  },
 }
